@@ -169,7 +169,7 @@ static JSONKeyMapper* globalKeyMapper = nil;
 
     //invalid input, just create empty instance
     if (![dict isKindOfClass:[NSDictionary class]]) {
-        if (err) *err = [JSONModelError errorInvalidDataWithMessage:@"Attempt to initialize JSONModel object using initWithDictionary:error: but the dictionary parameter was not an 'NSDictionary'."];
+        if (err) *err = [JSONModelError errorInvalidDataWithMessage:[NSString stringWithFormat:@"json error: expected dictionary but got %@", dict]];
         return nil;
     }
 

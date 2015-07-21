@@ -35,7 +35,7 @@ NSString* const kJSONModelKeyPath = @"kJSONModelKeyPath";
 {
     return [JSONModelError errorWithDomain:JSONModelErrorDomain
                                       code:kJSONModelErrorInvalidData
-                                  userInfo:@{NSLocalizedDescriptionKey:@"Invalid JSON data. Required JSON keys are missing from the input. Check the error user information.",kJSONModelMissingKeys:[keys allObjects]}];
+                                  userInfo:@{NSLocalizedDescriptionKey:[NSString stringWithFormat:@"json error: missing keys: %@", keys.allObjects], kJSONModelMissingKeys:[keys allObjects]}];
 }
 
 +(id)errorInvalidDataWithTypeMismatch:(NSString*)mismatchDescription
