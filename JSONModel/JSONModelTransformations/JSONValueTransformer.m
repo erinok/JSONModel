@@ -198,6 +198,9 @@ extern BOOL isNull(id value)
 }
 
 #pragma mark - string <-> url
+
+#pragma clang diagnostic ignored "-Wdeprecated"
+
 -(NSURL*)NSURLFromNSString:(NSString*)string
 {
     return [NSURL URLWithString:[string stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
